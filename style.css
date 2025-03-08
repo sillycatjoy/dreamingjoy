@@ -3,4 +3,10 @@ body {
   color: white;
   background-image: url('/images/backgrounds/stars.gif');
   background-size: 5%;
+  font-family: Comic-Sans;
+}
+
+@font-face {
+  font-family: "Comic-Sans";
+  src: url('/fonts/Comic-Sans.TTF');
 }
