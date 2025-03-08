@@ -1,5 +1,5 @@
 body {
   text-align: center;
-  text-color: white;
-  background-image: url('/images/backgrounds/stars.gif')
+  color: white;
+  background-image: url('/images/backgrounds/stars.gif');
 }
