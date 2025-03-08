@@ -9,7 +9,7 @@
         height: 595px;
         padding: 5px;
         margin: auto;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.25);
         opacity: 1;
         overflow-y: scroll;
       }
@@ -20,23 +20,24 @@
         padding: 5px;
         margin-left: 5px;
         background-color: black;
-        border: 10px solid white;
+        border: 5px solid white;
         border-radius: 5px;
         overflow-y: scroll;
         overflow: hidden;
-        position: absolute;
-      }
-
-      h1 {
-        opacity: 1;
+        float: left;
       }
       
-      a {
-        opacity: 1;
-      }
-      
-      p {
-        opacity: 1;
+      .newsbox {
+        width: 295px;
+        height: 295px;
+        padding: 5px;
+        margin-left: 5px;
+        background-color: black;
+        border: 5px solid white;
+        border-radius: 5px;
+        overflow-y: scroll;
+        overflow: hidden;
+        float: right;
       }
     </style>
     
@@ -48,7 +49,11 @@
       <h1 style="font-size: 36px;">WELCOME TO <a href="/">dreamingjoy.ca!!!</a></h1>
       <p style="margin-top: 0px;">this is a site made by me, joy, to do whatever silly stuff i want!!!</p>
       <div class="linksbox">
+        <h1>LINKS</h1>
         <a href="/about-me" style="font-size: 18px;">who is joy</a>
+      </div><div class="newsbox">
+        <h1>News</h1>
+        <p>nothing to see here...</p>
       </div>
     </div>
     
