@@ -10,3 +10,13 @@ body {
   font-family: "Comic-Sans";
   src: url('/fonts/Comic-Sans.TTF');
 }
+
+a {
+  color: #5c9aff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1971ff;
+  text-decoration: underline;
+}
