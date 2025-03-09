@@ -18,6 +18,6 @@ a {
 
 a:hover {
   color: #2b7dff;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 }
