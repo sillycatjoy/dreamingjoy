@@ -4,12 +4,6 @@ body {
   background-image: url('/images/backgrounds/stars.gif');
   background-size: 8%;
   font-family: Comic-Sans;
-  animation: movebg 600s linear infinite;
-}
-
-@keyframes movebg {
-  from {background-position: bottom left;}
-  to {background-position: top right;}
 }
 
 @font-face {
