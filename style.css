@@ -8,8 +8,8 @@ body {
 }
 
 @keyframes movebg {
-  from {background-postion: bottom left;}
-  to {background-postion: top right;}
+  from {background-position: bottom left;}
+  to {background-position: top right;}
 }
 
 @font-face {
