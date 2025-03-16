@@ -1,7 +1,7 @@
 body {
   text-align: center;
   color: black;
-  background-image: url('./art/paperbg.png');
+  background-image: url('/art/paperbg.png');
   font-family: Comic-Sans;
 }
 
