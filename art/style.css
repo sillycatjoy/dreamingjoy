@@ -1,14 +1,14 @@
 body {
   text-align: center;
   color: black;
-  background-image: url('https://www.dreamingjoy.ca/art/paperbg.png');
+  background-image: url('/art/paperbg.png');
   background-size: 1%, 1%;
   font-family: Comic-Sans;
 }
 
 @font-face {
   font-family: "Comic-Sans";
-  src: url('https://www.dreamingjoy.ca/fonts/Comic-Sans.TTF');
+  src: url('/fonts/Comic-Sans.TTF');
 }
 
 a {
