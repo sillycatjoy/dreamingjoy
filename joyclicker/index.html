@@ -105,7 +105,13 @@
       setInterval(function() {
         money=money+mps;
         document.getElementById("money").innerHTML = money;
-        document.title = 'Joy Clicker!!! - $'+money;
+        if (money >= 1) {
+          document.title = 'Joy Clicker!!! - $'+money;
+        } else {
+          document.title = 'Joy Clicker!!!';
+        }
+          
+        }
       }, 1000)
     </script>
     
