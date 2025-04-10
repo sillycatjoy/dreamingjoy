@@ -81,7 +81,7 @@
       var multiplierCost=250;
 
       function giveMoney() {
-        money = money + mpc;
+        money = money+mpc*multiplier;
         document.getElementById("money").innerHTML = money;
         document.title = 'Joy Clicker!!! - $'+money;
       }
@@ -120,7 +120,7 @@
       }
 
       setInterval(function() {
-        money=money+mps;
+        money=money+mps*multiplier;
         document.getElementById("money").innerHTML = money;
         document.title = 'Joy Clicker!!! - $'+money;
       }, 1000)
