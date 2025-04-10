@@ -1,4 +1,4 @@
-<html>
+ <html>
   <head>
     <title>Joy Clicker!!!</title>
     <link href="/images/milly-cat.png" rel="icon">
@@ -64,8 +64,8 @@
     
     <details>
       <summary style="font-size: 25px;">INFO</summary>
-        <p style="margin-top: 0px; margin-bottom: 0px;">You gain <b>$<span id=MPCdisplay>1</span></b> per click.</p>
-        <p style="margin-top: 0px; margin-bottom: 0px;">You automatically gain <b>$<span id=MPSdisplay>0</span></b> per second.</p>
+        <p style="margin-top: 0px; margin-bottom: 0px;">You gain <b>$<span id=MPCdisplay>1</span></b> per click (without multipliers).</p>
+        <p style="margin-top: 0px; margin-bottom: 0px;">You automatically gain <b>$<span id=MPSdisplay>0</span></b> per second (without multipliers).</p>
         <p style="margin-top: 0px;">You have a multiplier of <b>x<span id=multiplierDisplay>1</span></b>.</p>
     </details>
 
@@ -117,9 +117,6 @@
           document.getElementById("money").innerHTML = money;
           document.getElementById("multiplierCost").innerHTML = multiplierCost;
           document.getElementById("multiplierDisplay").innerHTML = multiplier;
-          
-          document.getElementById("MPCdisplay").innerHTML = mpc*multipler;
-          document.getElementById("MPSdisplay").innerHTML = mps*multiplier;
         }
       }
 
