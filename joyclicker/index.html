@@ -81,7 +81,6 @@
       }
       
       function buyMPC() {
-        mpcCost=mpc*50
         if (money >= mpcCost) {
           money=money-mpcCost;
           mpc=mpc+1;
@@ -93,9 +92,8 @@
       }
 
       function buyMPS() {
-        mpsCost=mps*100+100
         if (money >= mpsCost) {
-          money=money-mpsCost
+          money=money - mpsCost
           mps=mps+1;
           mpsCost=mps*100+100
           document.getElementById("money").innerHTML = money;
@@ -106,6 +104,7 @@
 
       setInterval(function() {
         money=money+mps;
+        document.getElementById("money").innerHTML = money;
       }, 1000)
     </script>
     
