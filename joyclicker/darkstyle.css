@@ -9,3 +9,14 @@ body {
   font-family: "Comic-Sans";
   src: url('/fonts/Comic-Sans.TTF');
 }
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #e0ecff;
+  text-decoration: underline;
+  cursor: pointer;
+}
