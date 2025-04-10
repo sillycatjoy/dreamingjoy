@@ -9,14 +9,3 @@ body {
   font-family: "Comic-Sans";
   src: url('/fonts/Comic-Sans.TTF');
 }
-
-.shopitem {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.shopitem:hover {
-  color: #e0ecff;
-  text-decoration: underline;
-  cursor: pointer;
-}
