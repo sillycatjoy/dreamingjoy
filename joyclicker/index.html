@@ -55,7 +55,7 @@
          
         <a class="shopitem" onclick="buyMPC()">More cash per click: $<span id="MPCcost">50</span></a>
          <br>
-        <a class="shopitem" onclick="">(NOT WORKING YET) Autoclicker $<span id="MPScost">100</span></a>
+        <a class="shopitem" onclick="buyMPS()">(NOT WORKING YET) Autoclicker $<span id="MPScost">100</span></a>
          
       </div>
      </details>
@@ -70,9 +70,10 @@
       var money=0;
       
       var mpc=1;
+      var mpcCost=50;
       
       var mps=0;
-      var mpscost=100;
+      var mpsCost=100;
 
       function giveMoney() {
         money = money + mpc;
@@ -80,22 +81,25 @@
       }
       
       function buyMPC() {
-        if (money >= mpc*50) {
-          money=money-mpc*50;
+        mpcCost=mpc*50
+        if (money >= mpcCost) {
+          money=money-mpcCost;
           mpc=mpc+1;
+          mpcCost=mpc*50
           document.getElementById("money").innerHTML = money;
-          document.getElementById("MPCcost").innerHTML = mpc * 50;
+          document.getElementById("MPCcost").innerHTML = mpcCost;
           document.getElementById("MPCdisplay").innerHTML = mpc;
         }
       }
 
       function buyMPS() {
-        mpscost=mps*100;
-        if (money >= mpscost+100) {
-          money=money-mpscost+100;
+        mpsCost=mps*100+100
+        if (money >= mpsCost) {
+          money=money-mpsCost
           mps=mps+1;
+          mpsCost=mps*100+100
           document.getElementById("money").innerHTML = money;
-          document.getElementById("MPScost").innerHTML = mpscost+100;
+          document.getElementById("MPScost").innerHTML = mpsCost;
           document.getElementById("MPSdisplay").innerHTML = mps;
         }
       }
