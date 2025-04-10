@@ -55,7 +55,8 @@
          
         <a class="shopitem" onclick="buyMPC()">More cash per click: $<span id="MPCcost">20</span></a>
          <br>
-        <a class="shopitem" onclick="buyMPS()">Autoclicker $<span id="MPScost">125</span></a>
+        <a class="shopitem" onclick="buyMPS()">Autoclicker: $<span id="MPScost">125</span></a>
+        <a class="shopitem" onclick="buyMultiplier()">Multiplier: $<span id="multiplierCost">250</span></a>
          
       </div>
      </details>
@@ -64,6 +65,7 @@
       <summary style="font-size: 25px;">INFO</summary>
         <p style="margin-top: 0px; margin-bottom: 0px;">You gain <b>$<span id=MPCdisplay>1</span></b> per click.</p>
         <p style="margin-top: 0px;">You automatically gain <b>$<span id=MPSdisplay>0</span></b> per second.</p>
+        <p style="margin-top: 0px;">You have a multiplier of x<b><span id=multiplierDisplay>1</span></b>.</p>
     </details>
 
     <script>
@@ -74,6 +76,9 @@
       
       var mps=0;
       var mpsCost=125;
+
+      var multiplier=1;
+      var multiplierCost=250;
 
       function giveMoney() {
         money = money + mpc;
@@ -100,6 +105,17 @@
           document.getElementById("money").innerHTML = money;
           document.getElementById("MPScost").innerHTML = mpsCost;
           document.getElementById("MPSdisplay").innerHTML = mps;
+        }
+      }
+
+      function buyMultiplier() {
+        if (money >= multiplierCost) {
+          money=money - multiplierCost
+          multiplier=multiplier+1;
+          multiplierCost= multiplier*250
+          document.getElementById("money").innerHTML = money;
+          document.getElementById("multiplierCost").innerHTML = multiplierCost;
+          document.getElementById("multiplierDisplay").innerHTML = multiplier;
         }
       }
 
