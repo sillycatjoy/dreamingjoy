@@ -10,12 +10,12 @@ body {
   src: url('/fonts/Comic-Sans.TTF');
 }
 
-a {
+.shopitem {
   color: #ffffff;
   text-decoration: none;
 }
 
-a:hover {
+.shopitem:hover {
   color: #e0ecff;
   text-decoration: underline;
   cursor: pointer;
