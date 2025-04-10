@@ -56,7 +56,9 @@
 
     <script>
       var money=0;
+      
       var mpc=1;
+      
       var mps=0;
 
       function giveMoney() {
@@ -65,15 +67,28 @@
       }
       
       function buyMPC() {
-        if (money >= mpc*75) {
-          money=money-mpc*75
-          mpc=mpc+1
+        if (money >= mpc*50) {
+          money=money-mpc*50;
+          mpc=mpc+1;
           document.getElementById("money").innerHTML = money;
-          document.getElementById("MPCcost").innerHTML = mpc * 75;
+          document.getElementById("MPCcost").innerHTML = mpc * 50;
           document.getElementById("MPCdisplay").innerHTML = mpc;
         }
       }
-      
+
+      function buyMPS() {
+        if (money >= mpc*100) {
+          money=money-mps*100;
+          mps=mps+1;
+          document.getElementById("money").innerHTML = money;
+          document.getElementById("MPScost").innerHTML = mps * 100;
+          document.getElementById("MPSdisplay").innerHTML = mps;
+        }
+      }
+
+      setInterval(function() {
+        money=money+mps;
+      }, 1000)
     </script>
     
   </body>
