@@ -55,7 +55,7 @@
          
         <a class="shopitem" onclick="buyMPC()">More cash per click: $<span id="MPCcost">20</span></a>
          <br>
-        <a class="shopitem" onclick="buyMPS()">Autoclicker $<span id="MPScost">200</span></a>
+        <a class="shopitem" onclick="buyMPS()">Autoclicker $<span id="MPScost">125</span></a>
          
       </div>
      </details>
@@ -73,7 +73,7 @@
       var mpcCost=20;
       
       var mps=0;
-      var mpsCost=100;
+      var mpsCost=125;
 
       function giveMoney() {
         money = money + mpc;
@@ -96,7 +96,7 @@
         if (money >= mpsCost) {
           money=money - mpsCost
           mps=mps+1;
-          mpsCost= Math.round(mps+200*1.55)
+          mpsCost= Math.round(mps+125*1.55)
           document.getElementById("money").innerHTML = money;
           document.getElementById("MPScost").innerHTML = mpsCost;
           document.getElementById("MPSdisplay").innerHTML = mps;
