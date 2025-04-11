@@ -36,7 +36,11 @@
         text-decoration: underline;
         cursor: pointer;
       }
-      
+
+      p {
+       margin-top: 0px;
+       margin-bottom: 0px;
+      }
     </style>
     
   </head>
@@ -46,7 +50,7 @@
     <div class="mainbox">
       <h1 style="font-size: 36px;">JOY CLICKER</h1>
       <img src="/joyclicker/images/buttons/button.png" onmousedown='this.src="/joyclicker/images/buttons/buttonhover.png"' onmouseup='this.src="/joyclicker/images/buttons/button.png"' width=200px height=200px onclick="giveMoney()">
-      <p>You currently have <b>$<span id="money">0</span></b>!!</p>
+      <p style="margin-top: 16px; margin-bottom: 16px;">You currently have <b>$<span id="money">0</span></b>!!</p>
     </div>
     
      <details>
@@ -64,9 +68,9 @@
     
     <details>
       <summary style="font-size: 25px;">INFO</summary>
-        <p style="margin-top: 0px; margin-bottom: 0px;">You gain <b>$<span id=MPCdisplay>1</span></b> per click (without multipliers).</p>
-        <p style="margin-top: 0px; margin-bottom: 0px;">You automatically gain <b>$<span id=MPSdisplay>0</span></b> per second (without multipliers).</p>
-        <p style="margin-top: 0px;">You have a multiplier of <b>x<span id=multiplierDisplay>1</span></b>.</p>
+        <p>You gain <b>$<span id=MPCdisplay>1</span></b> per click (without multipliers).</p>
+        <p>You automatically gain <b>$<span id=MPSdisplay>0</span></b> per second (without multipliers).</p>
+        <p>You have a multiplier of <b>x<span id=multiplierDisplay>1</span></b>.</p>
     </details>
 
     <script>
