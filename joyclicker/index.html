@@ -1,4 +1,4 @@
- <html>
+<html>
   <head>
     <title>Joy Clicker!!!</title>
     <link href="/images/milly-cat.png" rel="icon">
@@ -49,8 +49,13 @@
     
     <div class="mainbox">
       <h1 style="font-size: 36px;">JOY CLICKER</h1>
+      
       <img src="/joyclicker/images/buttons/button.png" onmousedown='this.src="/joyclicker/images/buttons/buttonhover.png"' onmouseup='this.src="/joyclicker/images/buttons/button.png"' width=200px height=200px onclick="giveMoney()">
-      <p style="margin-top: 16px; margin-bottom: 16px;">You currently have <b>$<span id="money">0</span></b>!!</p>
+      
+      <p style="margin-top: 16px;">You currently have <b>$<span id="money">0</span></b>!!</p>
+      
+      <p style="margin-bottom: 16px;">Level <b><span id="level">1</span></b> (<b><span id="xptnl">100</span> XP</b> to next level)</p> <!--XPTNL stands for xp to next level. just a reminder for my forgetful self-->
+      
     </div>
     
      <details>
@@ -60,8 +65,6 @@
         <a class="shopitem" onclick="buyMPC()">More cash per click: $<span id="MPCcost">20</span></a>
          <br>
         <a class="shopitem" onclick="buyMPS()">Autoclicker: $<span id="MPScost">125</span></a>
-         <br>
-        <a class="shopitem" onclick="buyMultiplier()">Multiplier: $<span id="multiplierCost">500</span></a>
          
       </div>
      </details>
@@ -70,7 +73,7 @@
       <summary style="font-size: 25px;">INFO</summary>
         <p>You gain <b>$<span id=MPCdisplay>1</span></b> per click (without multipliers).</p>
         <p>You automatically gain <b>$<span id=MPSdisplay>0</span></b> per second (without multipliers).</p>
-        <p>You have a multiplier of <b>x<span id=multiplierDisplay>1</span></b>.</p>
+        <p>Your multiplier is equal to your level.</p>
     </details>
 
     <script>
@@ -82,12 +85,17 @@
       var mps=0;
       var mpsCost=125;
 
-      var multiplier=1;
-      var multiplierCost=500;
+      var level=1;
+      var xptnl=250;
 
       function giveMoney() {
-        money = money+mpc*multiplier;
+        money = money+mpc*level;
         document.getElementById("money").innerHTML = money;
+        
+        xptnl = xptnl-1;
+        document.getElementById("xptnl").innerHTML = xptnl;
+        levelCheck();
+        
         document.title = 'Joy Clicker!!! - $'+money;
       }
       
@@ -112,20 +120,19 @@
           document.getElementById("MPSdisplay").innerHTML = mps;
         }
       }
-
-      function buyMultiplier() {
-        if (money >= multiplierCost) {
-          money=money - multiplierCost
-          multiplier=multiplier+1;
-          multiplierCost=multiplier*750
-          document.getElementById("money").innerHTML = money;
-          document.getElementById("multiplierCost").innerHTML = multiplierCost;
-          document.getElementById("multiplierDisplay").innerHTML = multiplier;
+      
+      function levelCheck() {
+        if (0 >= xptnl) {
+          level = level+1;
+          xptnl = level*250;
+          
+          document.getElementById("level").innerHTML = level;
+          document.getElementById("xptnl").innerHTML = xptnl;
         }
       }
 
       setInterval(function() {
-        money=money+mps*multiplier;
+        money=money+mps*level;
         document.getElementById("money").innerHTML = money;
         document.title = 'Joy Clicker!!! - $'+money;
       }, 1000)
