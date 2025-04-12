@@ -125,13 +125,15 @@
       
       function giveXP(givenXP) {
         xptnl = xptnl-givenXP;
-        document.getElementById("xptnl").innerHTML = xptnl;
         
         if (0 >= xptnl) {
           level = level+1;
           xptnl = math.Round(level*2.25*125);
           document.getElementById("xptnl").innerHTML = xptnl;
           document.getElementById("level").innerHTML = level;
+        else {
+          document.getElementById("xptnl").innerHTML = xptnl;
+        }
         }
       }
 
