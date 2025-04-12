@@ -92,9 +92,7 @@
         money = money+mpc*level;
         document.getElementById("money").innerHTML = money;
         
-        xptnl = xptnl-1;
-        document.getElementById("xptnl").innerHTML = xptnl;
-        levelCheck();
+        giveXP(1);
         
         document.title = 'Joy Clicker!!! - $'+money;
       }
@@ -108,9 +106,7 @@
           document.getElementById("MPCcost").innerHTML = mpcCost;
           document.getElementById("MPCdisplay").innerHTML = mpc;
 
-          xptnl = xptnl-10;
-          document.getElementById("xptnl").innerHTML = xptnl;
-          levelCheck();
+          giveXP(5);
         }
       }
 
@@ -123,20 +119,20 @@
           document.getElementById("MPScost").innerHTML = mpsCost;
           document.getElementById("MPSdisplay").innerHTML = mps;
           
-          xptnl = xptnl-25;
-          document.getElementById("xptnl").innerHTML = xptnl;
-          levelCheck();
+          giveXP(10);
         }
       }
       
-      function levelCheck() {
+      function giveXP(givenXP) {
+        xptnl = xptnl-givenXP;
+        
         if (0 >= xptnl) {
           level = level+1;
           xptnl = math.Round(level*2.25*125);
-          
           document.getElementById("level").innerHTML = level;
-          document.getElementById("xptnl").innerHTML = xptnl;
         }
+        
+        document.getElementById("xptnl").innerHTML = xptnl;
       }
 
       setInterval(function() {
