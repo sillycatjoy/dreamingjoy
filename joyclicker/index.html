@@ -71,13 +71,17 @@
     
     <details>
       <summary style="font-size: 25px;">INFO</summary>
-        <p>You gain <b>$<span id=MPCdisplay>1</span></b> per click (without multipliers).</p>
-        <p>You automatically gain <b>$<span id=MPSdisplay>0</span></b> per second (without multipliers).</p>
-        <p>Your multiplier is equal to your level.</p>
+        <p>You gain <b>$<span id="MPCdisplay">1</span></b> per click.</p>
+        <p>You automatically gain <b>$<span id="MPSdisplay">0</span></b> per second.</p>
+        <p>You've clicked the kitty <b><span id="clicksdisplay">0</span></b> times.</p>
+      <br>
+        <p>Shoutout to Lily!!!! She's the only reason this game exists (she asked me to make it and gave me some ideas), and also the world record holder!!! Yay Thanks Lily we say in unison</p>
     </details>
 
     <script>
       var money=0;
+
+      var clicksdisplay=0;
       
       var mpc=1;
       var mpcCost=20;
@@ -91,8 +95,11 @@
       function giveMoney() {
         money = money+mpc*level;
         document.getElementById("money").innerHTML = money;
-        
+
         giveXP(1);
+
+        clicksdisplay=clicksdisplay+1;
+        document.getElementById("clicksdisplay").innerHTML = clicksdisplay;
         
         document.title = 'Joy Clicker!!! - $'+money;
       }
@@ -104,7 +111,7 @@
           mpcCost=mpc*20
           document.getElementById("money").innerHTML = money;
           document.getElementById("MPCcost").innerHTML = mpcCost;
-          document.getElementById("MPCdisplay").innerHTML = mpc;
+          document.getElementById("MPCdisplay").innerHTML = mpc*level;
 
           giveXP(5);
         }
@@ -117,7 +124,7 @@
           mpsCost= mps*115+125
           document.getElementById("money").innerHTML = money;
           document.getElementById("MPScost").innerHTML = mpsCost;
-          document.getElementById("MPSdisplay").innerHTML = mps;
+          document.getElementById("MPSdisplay").innerHTML = mps*level;
           
           giveXP(10);
         }
@@ -130,6 +137,8 @@
           level = level+1;
           xptnl = Math.round(level*325);
           document.getElementById("level").innerHTML = level;
+          document.getElementById("MPSdisplay").innerHTML = mps*level;
+          document.getElementById("MPCdisplay").innerHTML = mpc*level;
         }
         
         document.getElementById("xptnl").innerHTML = xptnl;
