@@ -36,23 +36,33 @@
       label {
         font-size: 32px;
       }
+
+      .container {
+        width: 350px;
+        height: auto;
+        margin: auto;
+      }
       
     </style>
   </head>
   
   <body>
 
-    <h1>the worst magic 8-ball ever</h1>
+    <div class="container">
+        
+      <h1>the worst magic 8-ball ever</h1>
+      
+      <form>
+        <label>Please enter your question.</label>
+        <br>
+        <input type="text">
+      </form>
+      <p onclick="shake()" class="shaker">Shake the 8-ball</p>
+      
+      <span id="ball" style="margin-top: 0px; font-size:">hii it's me the magic 8-ball</span>
+
+    </div>
     
-    <form>
-      <label>Please enter your question.</label>
-      <br>
-      <input type="text">
-    </form>
-    <p onclick="shake()" class="shaker">Shake the 8-ball</p>
-    
-    <span id="ball" style="margin-top: 0px;">hii it's me the magic 8-ball</span>
-   
     <script>
       
       let list = ['oh wow. idk have you tried turning to hatsune miku?',
