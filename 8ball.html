@@ -1,18 +1,32 @@
 <html>
   <body>
+
+    <h1>the worst magic 8-ball ever</h1>
+    
     <form>
-      <label>Please enter your question: </label>
+      <label>Please enter your question.</label>
+      <br>
       <input type="text">
     </form>
+    <p onclick="shake()">Shake the 8-ball</p>
     
-    <p onclick="shake()">Ask</p>
-    
-    <span id="ball">oh hey i am the magic 8-ball</span>
-    
+    <span id="ball">hii it's me the magic 8-ball</span>
+   
     <script>
       
+      let list = ['oh wow. idk have you tried turning to hatsune miku?',
+                  'uhh idk',
+                  'good question lol',
+                  'i forgot',
+                  'WAIT omg i can help with this. simply [REDACTED]',
+                  'WHAT 😭',
+                  'would movie recs help',
+                  'oh my',
+                  'wow. just wow.',
+                  'gurl idk i just work here',]
+      
       function shake() {
-        document.getElementById("ball").innerHTML = "hi"
+        document.getElementById("ball").innerHTML = list[Math.floor(Math.random() * list.length)];
       }
       
     </script>
