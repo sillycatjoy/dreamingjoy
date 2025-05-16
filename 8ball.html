@@ -1,4 +1,30 @@
 <html>
+  
+  <head>
+    <style>
+      body {
+        text-align: center;
+        color: white;
+        background-color: black;
+        font-family: Comic-Sans;
+      }
+      
+      @font-face {
+        font-family: "Comic-Sans";
+        src: url('/fonts/Comic-Sans.TTF');
+      }
+      
+      .shaker {
+        text-decoration: none;
+      }
+      
+      .shaker:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  
   <body>
 
     <h1>the worst magic 8-ball ever</h1>
@@ -8,7 +34,7 @@
       <br>
       <input type="text">
     </form>
-    <p onclick="shake()">Shake the 8-ball</p>
+    <p onclick="shake()" class="shaker">Shake the 8-ball</p>
     
     <span id="ball">hii it's me the magic 8-ball</span>
    
