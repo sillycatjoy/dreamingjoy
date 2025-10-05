@@ -1,0 +1,136 @@
+<html>
+  
+  <head>
+    <title>dreamingjoy - home</title>
+    <link href="./images/milly-cat.png" rel="icon">
+    <link href="https://dreamingjoy.ca/style.css" rel="stylesheet">
+    
+    <style>
+
+      body {
+        overflow-x: hidden;
+        overflow-y: hidden;
+      }
+      
+      .holder {
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      
+      .smallerholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+      }
+      
+      .normalDiv {
+        background-color: rgba(0,0,0,0.8);
+        border: 5px solid white;
+        border-radius: 20px;
+        position: relative;
+        margin: 5px;
+        display: flex;
+        justify-content: center;
+      }
+      
+      .link {
+        display: flex;
+        color: #ffffff;
+        width: 160px;
+        height: 30px;
+        border: 5px solid white;
+        border-radius: 20px;
+        margin: 5px auto;
+        align-items: center;
+        justify-content: center;
+        animation: linkFadeOut 0.15s;
+      }
+      
+      .link:hover {
+        border: 5px solid #70a7ff;
+        color: #70a7ff;
+        animation: linkFadeIn 0.15s;
+      }
+      
+      @keyframes linkFadeIn {
+        from{border: 5px solid white; color: #ffffff;}
+        to{border: 5px solid #70a7ff; color: #70a7ff;}
+      }
+      
+      @keyframes linkFadeOut {
+        from{border: 5px solid #70a7ff; color: #70a7ff;}
+        to{border: 5px solid white; color: #ffffff;}
+      }
+      
+    </style>
+    
+  </head>
+  
+  <body>
+    <!-- i get weirdly annoyed that this is the way to put comments in html -->
+
+    <!-- hello you sneaky little inspect element user. here's your secret joy webdev tip: use codepen it's very useful and good -->
+    <div class="holder">
+      <div class="smallerholder">
+        <div class="normalDiv" style="width: 600px; height: 90px;"><h1>JOY'S CORNER OF THE INTERNET</h1></div> <!-- i could've done this much more efficiently i know don't throw tomatoes at me please -->
+        <div class="normalDiv" style="width: 180px; height: 90px;"><h1>:3</h1></div>
+      </div>
+      
+      <!-- the stuff above me is the title and stuff. if you're wondering "why is joy putting comments all the sudden" it's cause i'm in a cs class at school and when we were doing p5.js we were graded on our comments as well. i realized how much easier your code is to debug when you have actual comments. but when i get into the "zone" and i'm just typing away there won't be as much fyi -->
+      
+      <div class="smallerholder">
+        
+        <!-- this is where all the good stuff is -->
+
+        <!-- holy shit now that i'm looking at this after... i NEED to organize this at some point this is HELL -->
+        <div class="normalDiv" style="width: 600px; height: 500px; align-items: normal; overflow-y: scroll;">
+          
+          <div style="width: 550px; height: auto;">
+            
+            <!-- THIS IS WHERE THE ACTUAL MAINBOX IS!!!! KEEP THAT IN MIND -->
+            
+            <p style="font-size: 28px; margin-bottom: 0px;">About me</p>
+            <a style="margin-top: 0px; font-size: 18px;" onclick="history.back()">Return</a>
+            
+            <p>the</p>
+            
+            <!-- THIS IS WHERE THE ACTUAL MAINBOX ENDS.... :( -->
+          </div>
+            
+         </div>
+         
+        <div class="normalDiv" style="width: 180px; height: 500px; align-items: normal; justify-content: normal; flex-direction: column;">
+          
+          <a href="/"><div class="link">
+            Home
+          </div></a>
+          
+          <a href="/about-me"><div class="link">
+            About me
+          </div></a>
+          
+          <a href="/blog"><div class="link">
+            Blog
+          </div></a>
+          
+          <a href="/joyclicker"><div class="link">
+            Joy Clicker
+          </div></a>
+          
+          <a href="/v1"><div class="link">
+            Old site
+          </div></a>
+          
+        </div>
+      </div>
+    </div>
+    
+  </body>
+  
+</html>
