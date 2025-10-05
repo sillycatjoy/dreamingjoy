@@ -62,11 +62,23 @@
         margin: 5px auto;
         align-items: center;
         justify-content: center;
+        animation: linkFadeOut 0.15s;
       }
       
       .link:hover {
         border: 5px solid #70a7ff;
         color: #70a7ff;
+        animation: linkFadeIn 0.15s;
+      }
+      
+      @keyframes linkFadeIn {
+        from{border: 5px solid white; color: #ffffff;}
+        to{border: 5px solid #70a7ff; color: #70a7ff;}
+      }
+      
+      @keyframes linkFadeOut {
+        from{border: 5px solid #70a7ff; color: #70a7ff;}
+        to{border: 5px solid white; color: #ffffff;}
       }
       
     </style>
