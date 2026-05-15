@@ -92,6 +92,8 @@
       var mpcCost = 25;
       var mpsCost = 75;
 
+      var themeInput
+      
       const themes = ["dark"]
 
       function giveMoney() {
@@ -128,12 +130,17 @@
         }
       }
 
-      function setTheme(themeInput) {
+      function setTheme(input) {
+        themeInput = toString(input)
         if (themes.includes(themeInput)) {
-          document.getElementById("stylesheet").href = ("/joyclicker2/styles/"+themeinput+".css")
+          document.getElementById("stylesheet").href = ("/joyclicker2/styles/" + themeinput + ".css")
+          console.log("Equipped" + themeInput)
         } else if (money >= 20) {
+          money -= 20
           themes.push(themeInput)
-          document.getElementById("stylesheet").href = ("/joyclicker2/styles/"+themeinput+".css")
+          console.log("Added" + themeInput)
+          document.getElementById("stylesheet").href = ("/joyclicker2/styles/" + themeinput + ".css")
+          console.log("Equipped" + themeInput)
         }
       }
       
