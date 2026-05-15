@@ -58,7 +58,7 @@
         <div class=buttonsection>
           
           <h1 style="font-size: 4rem;">JOY CLICKER II</h1>
-          <img src="/joyclicker/images/buttons/button.png" width=200px height=200px onclick="giveMoney()" style="margin-top: 1rem;">
+          <img src="/joyclicker/images/buttons/button.png" width=200px height=200px onclick="giveMoney()" style="margin-bottom: 1rem;">
           <p>CURRENT BALANCE: $<span id=money>0</span></p>
           
         </div>
@@ -77,8 +77,11 @@
 
       var money=0;
 
+      var mpc=1;
+      var mps=0;
+
       function giveMoney() {
-        money = money+1
+        money = money+mpc
         document.getElementById("money").innerHTML = money;
         
         document.title = 'JOY CLICKER - $'+money;
