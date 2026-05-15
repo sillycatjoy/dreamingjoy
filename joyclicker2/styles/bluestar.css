@@ -6,13 +6,14 @@ body {
 }
 
 a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
 }
 
 a:hover {
-  color: #8acaff;
-  text-decoration: underline;
+  color: #5cb8ff;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 @font-face {
