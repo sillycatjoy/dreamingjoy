@@ -65,7 +65,7 @@
         <h1 style="font-size: 4rem;">JOY CLICKER II</h1>
         <img src="/joyclicker/images/buttons/button.png" width=200px height=200px id=button onclick="giveMoney()" style="margin-bottom: 1rem;">
         <p>CURRENT BALANCE: $<span id=money>0</span></p>
-        <p>LEVEL: <span id=level>1</span></p>
+        <p>LEVEL: <span id=level>1</span> || <span id=xp>0</span> / <span id=nextlevelxp>75</span></p>
         
       </div>
       
@@ -139,9 +139,8 @@
 
     function addXP() {
       xp += 1
-      document.getElementById("level").innerHTML = level;
 
-      if (xp >= 20) {
+      if (xp >= 50+25*level) {
         xp = 0
         level += 1
 
@@ -149,6 +148,9 @@
           document.getElementById("level2shop").style.display = "block";
         }
         
+        document.getElementById("level").innerHTML = level;
+        document.getElementById("xp").innerHTML = xp;
+        document.getElementById("nextlevelxp").innerHTML = 50+25*level;
       }
     }
 
