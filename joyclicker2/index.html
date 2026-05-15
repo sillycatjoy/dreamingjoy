@@ -130,11 +130,11 @@
 
     function setTheme(themeInput) {
       if (themes.includes(themeInput)) {
-        document.getElementById("themeStylesheet").setAttribute("href", themeInput)
+        document.getElementById("themeStylesheet").setAttribute("href", "/joyclicker2/styles/"+themeInput+".css")
       } else if (money >= 20) {
         money -= 20
         themes.push(themeInput)
-        document.getElementById("themeStylesheet").setAttribute("href", themeInput)
+        document.getElementById("themeStylesheet").setAttribute("href", "/joyclicker2/styles/"+themeInput+".css")
       }
     }
     
