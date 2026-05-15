@@ -1,150 +1,150 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
+  
+  <title>JOY CLICKER II</title>
+  <link href="/images/milly-cat.png" rel="icon">
+  <link href="/joyclicker2/styles/dark.css" rel="stylesheet">
+  
+  <style>
     
-    <title>JOY CLICKER II</title>
-    <link href="/images/milly-cat.png" rel="icon">
-    <link href="/joyclicker2/styles/dark.css" rel="stylesheet" id="themeStylesheet">
+    body {
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
     
-    <style>
-      
-      body {
-        overflow-x: hidden;
-        overflow-y: hidden;
-      }
-      
-      .game {
-        width: 70rem;
-        height: 45rem;
-        background-color: rgba(0, 0, 0, 0.75);
-        border: 0.2rem solid white;
-        border-radius: 2.5rem;
-        display: flex;
-        align-items: center;
-        padding: 1rem;
-      }
-      
-      .buttonsection {
-        width: 45rem;
-        height: 43.5rem;
-        background-color: rgba(0, 0, 0, 0);
-        overflow: hidden;
-        text-align: center;
-      }
-      
-      .shopsection {
-        width: 23rem;
-        height: 43.5rem;
-        background-color: rgba(0, 0, 0, 0);
-        border: 0.2rem solid white;
-        border-radius: 2.5rem;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-      }
-      
-    </style>
+    .game {
+      width: 70rem;
+      height: 45rem;
+      background-color: rgba(0, 0, 0, 0.75);
+      border: 0.2rem solid white;
+      border-radius: 2.5rem;
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+    }
     
-  </head>
+    .buttonsection {
+      width: 45rem;
+      height: 43.5rem;
+      background-color: rgba(0, 0, 0, 0);
+      overflow: hidden;
+      text-align: center;
+    }
+    
+    .shopsection {
+      width: 23rem;
+      height: 43.5rem;
+      background-color: rgba(0, 0, 0, 0);
+      border: 0.2rem solid white;
+      border-radius: 2.5rem;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    
+  </style>
+  
+</head>
 
-  <body>
+<body>
+  
+  <div style="width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
     
-    <div style="width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <div class=game>
       
-      <div class=game>
+      <div class=buttonsection>
         
-        <div class=buttonsection>
-          
-          <h1 style="font-size: 4rem;">JOY CLICKER II</h1>
-          <img src="/joyclicker/images/buttons/button.png" width=200px height=200px id=button onclick="giveMoney()" style="margin-bottom: 1rem;">
-          <p>CURRENT BALANCE: $<span id=money>0</span></p>
-          
-        </div>
+        <h1 style="font-size: 4rem;">JOY CLICKER II</h1>
+        <img src="/joyclicker/images/buttons/button.png" width=200px height=200px id=button onclick="giveMoney()" style="margin-bottom: 1rem;">
+        <p>CURRENT BALANCE: $<span id=money>0</span></p>
         
-        <div class=shopsection>
-          
-          <h1 style="font-size: 4rem;">SHOP</h1>
-          <a onclick="buyMpc()">CURSOR UPGRADE - $<span id=mpcDisplay>25</span></a>
-          <a onclick="buyMps()">AUTOCLICKER - $<span id=mpsDisplay>75</span></a>
-          <br>
-          <details>
-            <summary><b>Level 2 Shop</b></summary>
-            <p>All themes cost $20.</p>
-            <a onclick="setTheme("dark")">Dark (Default)</a><br>
-            <a onclick="setTheme("bluestar")">Bluestar</a>
-          </details>
-          
-        </div>
+      </div>
+      
+      <div class=shopsection>
+        
+        <h1 style="font-size: 4rem;">SHOP</h1>
+        <a onclick="buyMpc()">CURSOR UPGRADE - $<span id=mpcDisplay>25</span></a>
+        <a onclick="buyMps()">AUTOCLICKER - $<span id=mpsDisplay>75</span></a>
+        <br>
+        <details>
+          <summary><b>Level 2 Shop</b></summary>
+          <p>All themes cost $20.</p>
+          <a onclick="setTheme("dark")">Dark (Default)</a><br>
+          <a onclick="setTheme("bluestar")">Bluestar</a>
+        </details>
         
       </div>
       
     </div>
-
-    <script>
-
-      var money = 0;
-
-      var mpc = 1;
-      var mps = 0;
-
-      var mpcCost = 25;
-      var mpsCost = 75;
-      
-      const themes = ["dark"]
-
-      function giveMoney() {
-        money += mpc;
-        document.getElementById("money").innerHTML = money;
-        
-        document.title = 'JOY CLICKER II - $'+money;
-        document.getElementById("button").src = "/joyclicker/images/buttons/buttonhover.png";
-
-        setTimeout(function() {
-          document.getElementById("button").src = "/joyclicker/images/buttons/button.png";
-        }, 125)
-      }
-
-      function buyMpc() {
-        if (money >= mpcCost) {
-          money = money-mpcCost;
-
-          mpc += 1;
-          mpcCost = 25+(15*mpc);
-          document.getElementById("money").innerHTML = money;
-          document.getElementById("mpcDisplay").innerHTML = mpcCost;
-        }
-      }
-
-      function buyMps() {
-        if (money >= mpsCost) {
-          money = money-mpsCost;
-
-          mps += 1;
-          mpsCost = 75+(85*mps);
-          document.getElementById("money").innerHTML = money;
-          document.getElementById("mpsDisplay").innerHTML = mpsCost;
-        }
-      }
-
-      function setTheme(themeInput) {
-        if (themes.includes(themeInput)) {
-          document.getElementById("themeStylesheet").href = ("/joyclicker2/styles/" + themeinput + ".css")
-        } else if (money >= 20) {
-          money -= 20
-          themes.push(themeInput)
-          document.getElementById("themeStylesheet").href = ("/joyclicker2/styles/" + themeinput + ".css")
-        }
-      }
-      
-      setInterval(function() {
-        money = money+mps;
-        document.getElementById("money").innerHTML = money;
-        document.title = 'JOY CLICKER II - $'+money;
-      }, 1000)
-      
-    </script>
     
-  </body>
+  </div>
+
+  <script>
+
+    var money = 0;
+
+    var mpc = 1;
+    var mps = 0;
+
+    var mpcCost = 25;
+    var mpsCost = 75;
+    
+    const themes = ["dark"]
+
+    function giveMoney() {
+      money += mpc;
+      document.getElementById("money").innerHTML = money;
+      
+      document.title = 'JOY CLICKER II - $'+money;
+      document.getElementById("button").src = "/joyclicker/images/buttons/buttonhover.png";
+
+      setTimeout(function() {
+        document.getElementById("button").src = "/joyclicker/images/buttons/button.png";
+      }, 125)
+    }
+
+    function buyMpc() {
+      if (money >= mpcCost) {
+        money = money-mpcCost;
+
+        mpc += 1;
+        mpcCost = 25+(15*mpc);
+        document.getElementById("money").innerHTML = money;
+        document.getElementById("mpcDisplay").innerHTML = mpcCost;
+      }
+    }
+
+    function buyMps() {
+      if (money >= mpsCost) {
+        money = money-mpsCost;
+
+        mps += 1;
+        mpsCost = 75+(85*mps);
+        document.getElementById("money").innerHTML = money;
+        document.getElementById("mpsDisplay").innerHTML = mpsCost;
+      }
+    }
+
+    function setTheme(themeInput) {
+      if (themes.includes(themeInput)) {
+        document.getElementById("themeStylesheet").setAttribute("href", themeInput)
+      } else if (money >= 20) {
+        money -= 20
+        themes.push(themeInput)
+        document.getElementById("themeStylesheet").setAttribute("href", themeInput)
+      }
+    }
+    
+    setInterval(function() {
+      money = money+mps;
+      document.getElementById("money").innerHTML = money;
+      document.title = 'JOY CLICKER II - $'+money;
+    }, 1000)
+    
+  </script>
+  
+</body>
 </html>
