@@ -142,7 +142,7 @@
       let progress = '';
       
       for (let i = 0; i < 32; i += 1) {
-        if (((xp / (50+25*level))*100)/3.2 > i) {
+        if (((xp / (75+50*level))*100)/3.2 > i) {
           progress = progress + "|";
         } else {
           progress = progress + "-";
@@ -156,7 +156,7 @@
       xp += 1;
       progressBar();
       
-      if (xp >= 50+25*level) {
+      if (xp >= 75+50*level) {
         xp = 0;
         level += 1;
         
@@ -167,7 +167,7 @@
         
       document.getElementById("level").innerHTML = level;
       document.getElementById("xp").innerHTML = xp;
-      document.getElementById("nextlevelxp").innerHTML = 50+25*level;
+      document.getElementById("nextlevelxp").innerHTML = 75+50*level;
 
     }
 
