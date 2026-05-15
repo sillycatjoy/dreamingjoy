@@ -66,7 +66,8 @@
         <div class=shopsection>
           
           <h1 style="font-size: 4rem;">SHOP</h1>
-          <a onclick="buympc()">CURSOR UPGRADE - $<span id=mpcdisplay>25</span></a>
+          <a onclick="buyMpc()">CURSOR UPGRADE - $<span id=mpcDisplay>25</span></a>
+          <a onclick="buyMps()">AUTOCLICKER - $<span id=mpsDisplay>75</span></a>
           
         </div>
         
@@ -82,6 +83,7 @@
       var mps = 0;
 
       var mpcCost = 25;
+      var mpsCost = 75;
 
       function giveMoney() {
         money += mpc;
@@ -95,14 +97,25 @@
         }, 125)
       }
 
-      function buympc() {
+      function buyMpc() {
         if (money >= mpcCost) {
           money = money-mpcCost;
 
           mpc += 1;
           mpcCost = 25+(15*mpc);
           document.getElementById("money").innerHTML = money;
-          document.getElementById("mpcdisplay").innerHTML = mpcCost;
+          document.getElementById("mpcDisplay").innerHTML = mpcCost;
+        }
+      }
+
+      function buyMps() {
+        if (money >= mpsCost) {
+          money = money-mpsCost;
+
+          mpc += 1;
+          mpcCost = 75+(85*mps);
+          document.getElementById("money").innerHTML = money;
+          document.getElementById("mpsDisplay").innerHTML = mpsCost;
         }
       }
       
