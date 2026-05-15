@@ -66,6 +66,7 @@
         <img src="/joyclicker/images/buttons/button.png" width=215vw height=215vw id=button onclick="giveMoney()" style="margin-bottom: 1rem;">
         <p>CURRENT BALANCE: $<span id=money>0</span></p>
         <p>LEVEL: <span id=level>1</span> || <span id=xp>0</span> / <span id=nextlevelxp>75</span></p>
+        <p>[<span id=progressbar>--------------------------------</span>]</p>
         
       </div>
       
@@ -89,18 +90,18 @@
 
   <script>
 
-    var money = 0;
+    let money = 0;
 
-    var level = 1;
-    var xp = 0;
+    let level = 1;
+    let xp = 0;
 
-    var mpc = 1;
+    let mpc = 1;
     var mps = 0;
 
-    var mpcCost = 25;
-    var mpsCost = 75;
+    let mpcCost = 25;
+    let mpsCost = 75;
     
-    const themes = ["dark"]
+    let themes = ["dark"]
 
     function giveMoney() {
       money += mpc;
@@ -136,14 +137,29 @@
         document.getElementById("mpsDisplay").innerHTML = mpsCost;
       }
     }
+    
+    function progressBar() {
+      let progress = '';
+      
+      for (let i = 0; i < 32; i += 1) {
+        if (((xp / (50+25*level))*100)/3.2 > i) {
+          progress = progress + "|";
+        } else {
+          progress = progress + "-";
+        }
+      }
+      
+      document.getElementById("progressbar").innerHTML = progress
+    }
 
     function addXP() {
-      xp += 1
-
+      xp += 1;
+      progressBar();
+      
       if (xp >= 50+25*level) {
-        xp = 0
-        level += 1
-
+        xp = 0;
+        level += 1;
+        
         if (level == 2) {
           document.getElementById("level2shop").style.display = "block";
         }
@@ -152,7 +168,7 @@
       document.getElementById("level").innerHTML = level;
       document.getElementById("xp").innerHTML = xp;
       document.getElementById("nextlevelxp").innerHTML = 50+25*level;
-      
+
     }
 
     function setTheme(themeInput) {
