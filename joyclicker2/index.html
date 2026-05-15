@@ -84,23 +84,24 @@
       var mpcCost = 15;
 
       function giveMoney() {
-        money += mpc
+        money += mpc;
         document.getElementById("money").innerHTML = money;
         
         document.title = 'JOY CLICKER II - $'+money;
-        document.getElementById("button").src = "/joyclicker/images/buttons/buttonhover.png"
+        document.getElementById("button").src = "/joyclicker/images/buttons/buttonhover.png";
 
         setTimeout(function() {
-          document.getElementById("button").src = "/joyclicker/images/buttons/button.png"
+          document.getElementById("button").src = "/joyclicker/images/buttons/button.png";
         }, 125)
       }
 
       function buympc() {
         if (money >= mpcCost) {
-          money = money-mpcCost
+          money = money-mpcCost;
 
-          mpc += 1
-          mpcCost = 20*mpc
+          mpc += 1;
+          mpcCost = 20*mpc;
+          document.getElementById("money").innerHTML = money;
           document.getElementById("mpcdisplay").innerHTML = mpcCost;
         }
       }
