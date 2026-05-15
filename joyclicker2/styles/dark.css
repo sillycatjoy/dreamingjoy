@@ -5,6 +5,14 @@ body {
   font-family: Comic-Sans;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 @font-face {
   font-family: "Comic-Sans";
   src: url('/fonts/Comic-Sans.TTF');
