@@ -5,7 +5,7 @@
     
     <title>JOY CLICKER II</title>
     <link href="/images/milly-cat.png" rel="icon">
-    <link href="/joyclicker2/styles/dark.css" rel="stylesheet" id="stylesheet">
+    <link href="/joyclicker2/styles/dark.css" rel="stylesheet" id="themeStylesheet">
     
     <style>
       
@@ -131,11 +131,11 @@
 
       function setTheme(themeInput) {
         if (themes.includes(themeInput)) {
-          document.getElementById("stylesheet").href = ("/joyclicker2/styles/" + themeinput + ".css")
+          document.getElementById("themeStylesheet").href = ("/joyclicker2/styles/" + themeinput + ".css")
         } else if (money >= 20) {
           money -= 20
           themes.push(themeInput)
-          document.getElementById("stylesheet").href = ("/joyclicker2/styles/" + themeinput + ".css")
+          document.getElementById("themeStylesheet").href = ("/joyclicker2/styles/" + themeinput + ".css")
         }
       }
       
