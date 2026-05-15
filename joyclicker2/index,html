@@ -1,1 +1,71 @@
+<html>
 
+  <head>
+    
+    <style>
+      
+      body {
+        background-color: #0341fc;
+      }
+      
+      .game {
+        width: 70rem;
+        height: 45rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 0.2rem solid white;
+        border-radius: 2.5rem;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+      }
+      
+      .buttonsection {
+        width: 45rem;
+        height: 43.5rem;
+        background-color: rgba(0, 0, 0, 0);
+        overflow: hidden;
+        text-align: center;
+      }
+      
+      .shopsection {
+        width: 23rem;
+        height: 43.5rem;
+        background-color: rgba(0, 0, 0, 0);
+        border: 0.2rem solid white;
+        border-radius: 2.5rem;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      
+    </style>
+    
+  </head>
+
+  <body>
+    
+    <div style="width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center;">
+      
+      <div class=game>
+        
+        <div class=buttonsection>
+          
+          <h1 style="font-size: 4rem;">JOYCLICKER 2</h1>
+          
+        </div>
+        
+        <div class=shopsection>
+          
+          <h1 style="font-size: 4rem;">SHOP</h1>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+
+  </body>
+
+</html>
