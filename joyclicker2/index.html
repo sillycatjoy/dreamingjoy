@@ -46,13 +46,15 @@
 
   <body>
     
-    <div style="width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <div style="width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
       
       <div class=game>
         
         <div class=buttonsection>
           
           <h1 style="font-size: 4rem;">JOYCLICKER 2</h1>
+          <img src="/joyclicker/images/buttons/button.png" width=200px height=200px onclick="giveMoney()">
+          <p>CURRENT BALANCE: $<span id=money>0</span></p>
           
         </div>
         
@@ -66,6 +68,24 @@
       
     </div>
 
+    <script>
+
+      var money=0;
+
+      function giveMoney() {
+        money = money+1
+        document.getElementById("money").innerHTML = money;
+
+        giveXP(1);
+
+        clicksdisplay=clicksdisplay+1;
+        document.getElementById("clicksdisplay").innerHTML = clicksdisplay;
+        
+        document.title = 'Joy Clicker!!! - $'+money;
+      }
+      
+    </script>
+    
   </body>
 
 </html>
