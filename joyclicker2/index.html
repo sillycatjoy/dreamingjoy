@@ -154,7 +154,6 @@
 
     function addXP() {
       xp += 1;
-      progressBar();
       
       if (xp >= 75+50*level) {
         xp = 0;
@@ -168,6 +167,8 @@
       document.getElementById("level").innerHTML = level;
       document.getElementById("xp").innerHTML = xp;
       document.getElementById("nextlevelxp").innerHTML = 75+50*level;
+
+      progressBar();
 
     }
 
