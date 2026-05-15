@@ -71,8 +71,9 @@
           <br>
           <details>
             <summary><b>Level 2 Shop</b></summary>
-            <p>All themes cost $20. Once you purchase them, you will not have to do it again. I am not a corporation that believes that buying isn't owning</p>
+            <p>All themes cost $20.</p>
             <a onclick="setTheme(dark)">Dark (Default)</a>
+            <a onclick="setTheme(bluestar)">Bluestar</a>
           </details>
           
         </div>
@@ -129,6 +130,9 @@
 
       function setTheme(themeInput) {
         if (themes.includes(themeInput)) {
+          document.getElementById("stylesheet").href = ("/joyclicker2/styles/"+themeinput+".css")
+        } else if (money >= 20) {
+          themes.push(themeInput)
           document.getElementById("stylesheet").href = ("/joyclicker2/styles/"+themeinput+".css")
         }
       }
