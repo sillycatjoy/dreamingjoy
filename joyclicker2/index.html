@@ -4,7 +4,7 @@
     
     <title>JOY CLICKER II</title>
     <link href="/images/milly-cat.png" rel="icon">
-    <link href="/joyclicker2/styles/dark.css" rel="stylesheet">
+    <link href="/joyclicker2/styles/dark.css" rel="stylesheet" id="stylesheet">
     
     <style>
       
@@ -72,7 +72,7 @@
           <details>
             <summary><b>Level 2 Shop</b></summary>
             <p>All themes cost $20. Once you purchase them, you will not have to do it again. I am not a corporation that believes that buying isn't owning</p>
-            <a onclick="">Dark (Default)</a>
+            <a onclick="setTheme(dark)">Dark (Default)</a>
           </details>
           
         </div>
@@ -90,6 +90,8 @@
 
       var mpcCost = 25;
       var mpsCost = 75;
+
+      const themes = ["dark"]
 
       function giveMoney() {
         money += mpc;
@@ -124,6 +126,18 @@
           document.getElementById("mpsDisplay").innerHTML = mpsCost;
         }
       }
+
+      function setTheme(themeInput) {
+        if (themes.includes(themeInput)) {
+          document.getElementById("stylesheet").href = ("/joyclicker2/styles/"+themeinput+".css")
+        }
+      }
+      
+      setInterval(function() {
+        money = money+mps;
+        document.getElementById("money").innerHTML = money;
+        document.title = 'JOY CLICKER ii - $'+money;
+      }, 1000)
       
     </script>
     
