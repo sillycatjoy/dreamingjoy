@@ -1,0 +1,19 @@
+body {
+  color: white;
+  background-color: #4287f5;
+  text-align: center;
+  font-family: Comic-Sans;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@font-face {
+  font-family: "Comic-Sans";
+  src: url('/fonts/Comic-Sans.TTF');
+}
