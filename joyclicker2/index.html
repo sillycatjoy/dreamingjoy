@@ -66,7 +66,7 @@
         <div class=shopsection>
           
           <h1 style="font-size: 4rem;">SHOP</h1>
-          <a onclick="buympc()">CURSOR UPGRADE - $<span id=mpcdisplay>25</span></a>
+          <a onclick="buympc()">CURSOR UPGRADE - $<span id=mpcdisplay>15</span></a>
           
         </div>
         
@@ -81,7 +81,7 @@
       var mpc = 1;
       var mps = 0;
 
-      var mpcCost = 25;
+      var mpcCost = 15;
 
       function giveMoney() {
         money += mpc
@@ -100,8 +100,8 @@
           money = money - mpcCost
 
           mpc += 1
-          mpcCost = 25 + (20*mpc)
-          document.getElementById("mpcdisplay").innerHTML = mpc;
+          mpcCost = 20*mpc
+          document.getElementById("mpcdisplay").innerHTML = mpcCost;
         }
       }
       
