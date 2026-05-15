@@ -66,6 +66,7 @@
         <div class=shopsection>
           
           <h1 style="font-size: 4rem;">SHOP</h1>
+          <a onclick="buympc()">CURSOR UPGRADE - $<span id=mpcdisplay>25</span></a>
           
         </div>
         
@@ -75,13 +76,15 @@
 
     <script>
 
-      var money=0;
+      var money = 0;
 
-      var mpc=1;
-      var mps=0;
+      var mpc = 1;
+      var mps = 0;
+
+      var mpcCost = 25;
 
       function giveMoney() {
-        money = money+mpc
+        money += mpc
         document.getElementById("money").innerHTML = money;
         
         document.title = 'JOY CLICKER II - $'+money;
@@ -90,6 +93,16 @@
         setTimeout(function() {
           document.getElementById("button").src = "/joyclicker/images/buttons/button.png"
         }, 125)
+      }
+
+      function buympc() {
+        if (money >= mpcCost) {
+          money = money - mpcCost
+
+          mpc += 1
+          mpcCost = 25 + (20*mpc)
+          document.getElementById("mpcdisplay").innerHTML = mpc;
+        }
       }
       
     </script>
