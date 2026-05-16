@@ -75,11 +75,21 @@
         <h1 style="font-size: 4vmax;">SHOP</h1>
         <a onclick="buyMpc()">CURSOR UPGRADE - $<span id=mpcDisplay>25</span></a>
         <a onclick="buyMps()">AUTOCLICKER - $<span id=mpsDisplay>75</span></a>
+        
         <br>
-        <details id=level2shop style="display: none;">
+        
+        <details id=level2shop style="display: none; margin-top: 8px">
           <summary><b>Level 2</b></summary>
           <p>All themes cost $20.</p>
           <p><a onclick="setTheme('dark')">Dark (Default)</a>, <a onclick="setTheme('bluestar')">Bluestar</a></p>
+        </details>
+        
+        <br>s
+        
+        <details id=level3shop style="display: none; margin-top: 8px">
+          <summary><b>Level 3</b></summary>
+          <p>You can sacrifice 25 Cursor Uprades and 10 Autoclickers to summon a dead god.</p>
+          <p><a onclick="summonGod()">Sacrifice</a></p>
         </details>
         
       </div>
@@ -161,6 +171,10 @@
         
         if (level == 2) {
           document.getElementById("level2shop").style.display = "block";
+        }
+        
+        if (level == 3) {
+          document.getElementById("level3shop").style.display = "block";
         }
       }
         
