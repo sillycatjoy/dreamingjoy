@@ -126,12 +126,43 @@
     } else {
       document.getElementById("savemenu").style.display = "none";
     }
+
+    function updateVisuals() {
+      document.getElementById("money").innerHTML = money;
+      document.getElementById("mpcDisplay").innerHTML = mpcCost;
+      document.getElementById("mpsDisplay").innerHTML = mpsCost;
+      
+      document.getElementById("level").innerHTML = level;
+      document.getElementById("xp").innerHTML = xp;
+      document.getElementById("nextlevelxp").innerHTML = 75+50*level;
+      
+      if (level >= 2) {
+        document.getElementById("level2shop").style.display = "block";
+      }
+        
+      if (level >= 3) {
+        document.getElementById("level3shop").style.display = "block";
+      }
+
+      // progress bar v
+      
+      let progress = '';
+      
+      for (let i = 0; i < 32; i += 1) {
+        if (((xp / (75+50*level))*100)/3.2 > i) {
+          progress = progress + "|";
+        } else {
+          progress = progress + "-";
+        }
+      }
+      
+      document.getElementById("progressbar").innerHTML = progress;
+    }
     
     function giveMoney() {
       money += mpc;
       totalClicks++;
-      addXP();
-      document.getElementById("money").innerHTML = money;
+      addXP(1);
       
       document.title = 'JOY CLICKER II - $'+money;
       document.getElementById("button").src = "/joyclicker/images/buttons/buttonhover.png";
@@ -147,8 +178,7 @@
 
         mpc += 1;
         mpcCost = 25+(15*mpc);
-        document.getElementById("money").innerHTML = money;
-        document.getElementById("mpcDisplay").innerHTML = mpcCost;
+        updateVisuals()
       }
     }
 
@@ -158,47 +188,21 @@
 
         mps += 1;
         mpsCost = 75+(85*mps);
-        document.getElementById("money").innerHTML = money;
-        document.getElementById("mpsDisplay").innerHTML = mpsCost;
+        updateVisuals()
       }
-    }
-    
-    function progressBar() {
-      let progress = '';
-      
-      for (let i = 0; i < 32; i += 1) {
-        if (((xp / (75+50*level))*100)/3.2 > i) {
-          progress = progress + "|";
-        } else {
-          progress = progress + "-";
-        }
-      }
-      
-      document.getElementById("progressbar").innerHTML = progress;
     }
 
-    function addXP() {
-      xp += 1;
+    function addXP(number) {
+      xp += number;
       
       if (xp >= 75+50*level) {
         xp = 0;
         level += 1;
         
-        if (level >= 2) {
-          document.getElementById("level2shop").style.display = "block";
-        }
         
-        if (level >= 3) {
-          document.getElementById("level3shop").style.display = "block";
-        }
       }
-        
-      document.getElementById("level").innerHTML = level;
-      document.getElementById("xp").innerHTML = xp;
-      document.getElementById("nextlevelxp").innerHTML = 75+50*level;
 
-      progressBar();
-
+      updateVisuals();
     }
 
     function friendQuestion(question) {
@@ -239,11 +243,12 @@
     }
     
     function loadData() {
-      money = localStorage.getItem("moneyData");
-      mpc = localStorage.getItem("mpcData");
-      mps = localStorage.getItem("mpsData");
-      xp = localStorage.getItem("xpData");
-      level = localStorage.getItem("levelData");
+      money = Integer.parseInt(localStorage.getItem("moneyData"));
+      mpc = Integer.parseInt(localStorage.getItem("mpcData"));
+      mps = Integer.parseInt(localStorage.getItem("mpsData"));
+      xp = Integer.parseInt(localStorage.getItem("xpData"));
+      level = Integer.parseInt(localStorage.getItem("levelData"));
+      updateVisuals();
     }
     
   </script>
