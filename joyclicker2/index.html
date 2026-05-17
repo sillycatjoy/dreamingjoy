@@ -118,8 +118,9 @@
 
     let mpcCost = 25;
     let mpsCost = 75;
-    
-    let themes = ["dark"]
+
+    let theme = "dark";
+    let themes = ["dark"];
 
     if (typeof(Storage) !== "undefined") {
       document.getElementById("savemenu").style.display = "block";
@@ -135,6 +136,7 @@
       document.getElementById("level").innerHTML = level;
       document.getElementById("xp").innerHTML = xp;
       document.getElementById("nextlevelxp").innerHTML = 75+50*level;
+      document.getElementById("themeStylesheet").setAttribute("href", "/joyclicker2/styles/"+theme+".css");
       
       if (level >= 2) {
         document.getElementById("level2shop").style.display = "block";
@@ -217,12 +219,13 @@
     }
 
     function setTheme(themeInput) {
+      theme = themeInput;
       if (themes.includes(themeInput)) {
-        document.getElementById("themeStylesheet").setAttribute("href", "/joyclicker2/styles/"+themeInput+".css");
+        updateVisuals();
       } else if (money >= 20) {
         money -= 20;
         themes.push(themeInput);
-        document.getElementById("themeStylesheet").setAttribute("href", "/joyclicker2/styles/"+themeInput+".css");
+        updateVisuals();
       }
     }
     
@@ -238,6 +241,7 @@
       localStorage.setItem("mpsData", mps);
       localStorage.setItem("xpData", xp);
       localStorage.setItem("levelData", level);
+      localStorage.setItem("themeData", theme);
       localStorage.setItem("themesData", JSON.stringify(themes));
       
       document.getElementById("savebutton").innerHTML = "Data saved!";
@@ -252,6 +256,7 @@
       mps = Number(localStorage.getItem("mpsData"));
       xp = Number(localStorage.getItem("xpData"));
       level = Number(localStorage.getItem("levelData"));
+      theme = localStorage.getItem("themeData");
       themes = JSON.parse(localStorage.getItem("themesData"))
       updateVisuals();
     }
