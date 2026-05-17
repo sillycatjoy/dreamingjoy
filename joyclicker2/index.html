@@ -241,7 +241,7 @@
       localStorage.setItem("mpsData", mps);
       localStorage.setItem("xpData", xp);
       localStorage.setItem("levelData", level);
-      localStorage.setItem("themeData", theme);
+      localStorage.setItem("themeData", JSON.stringify(theme));
       localStorage.setItem("themesData", JSON.stringify(themes));
       
       document.getElementById("savebutton").innerHTML = "Data saved!";
@@ -256,7 +256,7 @@
       mps = Number(localStorage.getItem("mpsData"));
       xp = Number(localStorage.getItem("xpData"));
       level = Number(localStorage.getItem("levelData"));
-      theme = localStorage.getItem("themeData");
+      theme = JSON.parse(localStorage.getItem("themeData"));
       themes = JSON.parse(localStorage.getItem("themesData"))
       updateVisuals();
     }
