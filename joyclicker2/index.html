@@ -88,7 +88,7 @@
         
         <details id=level3shop style="display: none; margin-top: 8px">
           <summary><b>Level 3</b></summary>
-          <p>Hello there</p>
+          <p>" <span id=friendDialogue>Hello there</span> "</p>
           <img src="/joyclicker2/images/friend.jpg" width=96vw height=96vw>
           <br>
           <a onclick="friendQuestion(1)">Who are you?</a>
@@ -107,6 +107,7 @@
   <script>
 
     let money = 0;
+    let totalClicks = 0;
 
     let level = 1;
     let xp = 0;
@@ -121,7 +122,8 @@
 
     function giveMoney() {
       money += mpc;
-      addXP()
+      totalClicks++;
+      addXP();
       document.getElementById("money").innerHTML = money;
       
       document.title = 'JOY CLICKER II - $'+money;
@@ -131,7 +133,7 @@
         document.getElementById("button").src = "/joyclicker/images/buttons/button.png";
       }, 125)
     }
-
+    
     function buyMpc() {
       if (money >= mpcCost) {
         money = money-mpcCost;
@@ -165,7 +167,7 @@
         }
       }
       
-      document.getElementById("progressbar").innerHTML = progress
+      document.getElementById("progressbar").innerHTML = progress;
     }
 
     function addXP() {
@@ -190,6 +192,18 @@
 
       progressBar();
 
+    }
+
+    function(question) {
+      let dialogue = document.getElementById("friendDialogue");
+
+      if (question == 1) {
+        dialogue.innerHTML = "I am Ransom. I am a cat. I am a friend.";
+      } else if (question == 2) {
+        dialogue.innerHTML = ("You have clicked the kitty " + totalClicks + " times. You gain $" + mpc + "per click and $" + mps + " every second.");
+      } else if (question == 2) {
+        dialogue.innerHTML = ("I'm skilletastic.");
+      }
     }
 
     function setTheme(themeInput) {
