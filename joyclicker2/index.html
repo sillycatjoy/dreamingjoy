@@ -163,6 +163,7 @@
       money += mpc;
       totalClicks++;
       addXP(1);
+      updateVisuals();
       
       document.title = 'JOY CLICKER II - $'+money;
       document.getElementById("button").src = "/joyclicker/images/buttons/buttonhover.png";
@@ -245,7 +246,7 @@
         bonusMoney += 20;
       }
       
-      localStorage.setItem("bonusMoney", bonusMoney);
+      localStorage.setItem("bonusMoneyData", bonusMoney);
     }
     
     function loadData() {
@@ -255,7 +256,7 @@
       xp = Number(localStorage.getItem("xpData"));
       level = Number(localStorage.getItem("levelData"));
       
-      money += Number(localStorage.getItem("bonusMoney"));
+      money += Number(localStorage.getItem("bonusMoneyData"));
       updateVisuals();
     }
     
