@@ -231,7 +231,6 @@
       money = money+mps;
       document.getElementById("money").innerHTML = money;
       document.title = 'JOY CLICKER II - $'+money;
-      console.log("mps added")
     }, 1000)
     
     function saveData() {
@@ -243,11 +242,11 @@
     }
     
     function loadData() {
-      money = Integer.parseInt(localStorage.getItem("moneyData"));
-      mpc = Integer.parseInt(localStorage.getItem("mpcData"));
-      mps = Integer.parseInt(localStorage.getItem("mpsData"));
-      xp = Integer.parseInt(localStorage.getItem("xpData"));
-      level = Integer.parseInt(localStorage.getItem("levelData"));
+      money = Number(localStorage.getItem("moneyData"));
+      mpc = Number(localStorage.getItem("mpcData"));
+      mps = Number(localStorage.getItem("mpsData"));
+      xp = Number(localStorage.getItem("xpData"));
+      level = Number(localStorage.getItem("levelData"));
       updateVisuals();
     }
     
