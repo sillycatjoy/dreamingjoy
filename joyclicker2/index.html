@@ -75,7 +75,7 @@
         <h1 style="font-size: 4vmax;">SHOP</h1>
         <a onclick="buyMpc()">CURSOR UPGRADE - $<span id=mpcDisplay>25</span></a>
         <a onclick="buyMps()">AUTOCLICKER - $<span id=mpsDisplay>75</span></a>
-        <p id=savemenu><a onclick="saveData()">Save</a> // <a onclick="loadData()">Load</a></p>
+        <p id=savemenu><a onclick="saveData()" id=savebutton>Save</a> // <a onclick="loadData()">Load</a></p>
         
         <br>
         
@@ -199,8 +199,6 @@
       if (xp >= 75+50*level) {
         xp = 0;
         level += 1;
-        
-        
       }
 
       updateVisuals();
@@ -214,7 +212,7 @@
       } else if (question == 2) {
         dialogue.innerHTML = ("You have clicked the kitty " + totalClicks + " times. You gain $" + mpc + " per click and $" + mps + " every second.");
       } else if (question == 3) {
-        dialogue.innerHTML = ("I'm skilletastic.");
+        dialogue.innerHTML = "I'm skilletastic.";
       }
     }
 
@@ -241,6 +239,11 @@
       localStorage.setItem("xpData", xp);
       localStorage.setItem("levelData", level);
       localStorage.setItem("themesData", JSON.stringify(themes));
+      
+      document.getElementById("savebutton").innerHTML = "Data saved!";
+      setTimeout(function() {
+        document.getElementById("savebutton").innerHTML = "Save";
+      }, 1000)
     }
     
     function loadData() {
