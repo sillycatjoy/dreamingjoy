@@ -127,6 +127,32 @@
     } else {
       document.getElementById("savemenu").style.display = "none";
     }
+    
+    function saveData() {
+      localStorage.setItem("moneyData", money);
+      localStorage.setItem("mpcData", mpc);
+      localStorage.setItem("mpsData", mps);
+      localStorage.setItem("xpData", xp);
+      localStorage.setItem("levelData", level);
+      localStorage.setItem("themeData", theme);
+      localStorage.setItem("themesData", JSON.stringify(themes));
+      
+      document.getElementById("savebutton").innerHTML = "Data saved!";
+      setTimeout(function() {
+        document.getElementById("savebutton").innerHTML = "Save";
+      }, 1000)
+    }
+    
+    function loadData() {
+      money = Number(localStorage.getItem("moneyData"));
+      mpc = Number(localStorage.getItem("mpcData"));
+      mps = Number(localStorage.getItem("mpsData"));
+      xp = Number(localStorage.getItem("xpData"));
+      level = Number(localStorage.getItem("levelData"));
+      theme = localStorage.getItem("themeData");
+      themes = JSON.parse(localStorage.getItem("themesData"))
+      updateVisuals();
+    }
 
     function updateVisuals() {
       document.getElementById("money").innerHTML = money;
@@ -201,6 +227,7 @@
       if (xp >= 75+50*level) {
         xp = 0;
         level += 1;
+        saveData();
       }
 
       updateVisuals();
@@ -234,32 +261,6 @@
       document.getElementById("money").innerHTML = money;
       document.title = 'JOY CLICKER II - $'+money;
     }, 1000)
-    
-    function saveData() {
-      localStorage.setItem("moneyData", money);
-      localStorage.setItem("mpcData", mpc);
-      localStorage.setItem("mpsData", mps);
-      localStorage.setItem("xpData", xp);
-      localStorage.setItem("levelData", level);
-      localStorage.setItem("themeData", theme);
-      localStorage.setItem("themesData", JSON.stringify(themes));
-      
-      document.getElementById("savebutton").innerHTML = "Data saved!";
-      setTimeout(function() {
-        document.getElementById("savebutton").innerHTML = "Save";
-      }, 1000)
-    }
-    
-    function loadData() {
-      money = Number(localStorage.getItem("moneyData"));
-      mpc = Number(localStorage.getItem("mpcData"));
-      mps = Number(localStorage.getItem("mpsData"));
-      xp = Number(localStorage.getItem("xpData"));
-      level = Number(localStorage.getItem("levelData"));
-      theme = localStorage.getItem("themeData");
-      themes = JSON.parse(localStorage.getItem("themesData"))
-      updateVisuals();
-    }
     
   </script>
   
