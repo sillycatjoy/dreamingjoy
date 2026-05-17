@@ -136,6 +136,7 @@
       localStorage.setItem("levelData", level);
       localStorage.setItem("themeData", theme);
       localStorage.setItem("themesData", JSON.stringify(themes));
+      localStorage.setItem("totalClicksData", totalClicks);
       
       document.getElementById("savebutton").innerHTML = "Data saved!";
       setTimeout(function() {
@@ -150,7 +151,9 @@
       xp = Number(localStorage.getItem("xpData"));
       level = Number(localStorage.getItem("levelData"));
       theme = localStorage.getItem("themeData");
-      themes = JSON.parse(localStorage.getItem("themesData"))
+      themes = JSON.parse(localStorage.getItem("themesData"));
+      totalClicks = Number(localStorage.getItem("totalClicksData"));
+      
       updateVisuals();
     }
 
