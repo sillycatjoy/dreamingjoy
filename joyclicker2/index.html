@@ -240,13 +240,7 @@
       localStorage.setItem("mpsData", mps);
       localStorage.setItem("xpData", xp);
       localStorage.setItem("levelData", level);
-
-      let bonusMoney = 0
-      for (let i = 0, i == themes.length, i++) {
-        bonusMoney += 20;
-      }
-      
-      localStorage.setItem("bonusMoneyData", bonusMoney);
+      localStorage.setItem("themesData", JSON.stringify(themes));
     }
     
     function loadData() {
@@ -255,8 +249,7 @@
       mps = Number(localStorage.getItem("mpsData"));
       xp = Number(localStorage.getItem("xpData"));
       level = Number(localStorage.getItem("levelData"));
-      
-      money += Number(localStorage.getItem("bonusMoneyData"));
+      themes = JSON.parse(localStorage.getItem("themesData"))
       updateVisuals();
     }
     
