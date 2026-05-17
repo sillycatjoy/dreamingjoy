@@ -75,6 +75,7 @@
         <h1 style="font-size: 4vmax;">SHOP</h1>
         <a onclick="buyMpc()">CURSOR UPGRADE - $<span id=mpcDisplay>25</span></a>
         <a onclick="buyMps()">AUTOCLICKER - $<span id=mpsDisplay>75</span></a>
+        <p id=savemenu><a onclick="saveData()">Save</a> // <a onclick="loadData()">Load</a></p>
         
         <br>
         
@@ -120,6 +121,12 @@
     
     let themes = ["dark"]
 
+    if (typeOf(Storage) !== "undefined") {
+      document.getElementById("savemenu").style.display = "block";
+    } else {
+      document.getElementById("savemenu").style.display = "none";
+    }
+    
     function giveMoney() {
       money += mpc;
       totalClicks++;
@@ -221,6 +228,22 @@
       document.getElementById("money").innerHTML = money;
       document.title = 'JOY CLICKER II - $'+money;
     }, 1000)
+    
+    function saveData() {
+      localStorage.setItem("money", money);
+      localStorage.setItem("mpc", mpc);
+      localStorage.setItem("mps", mps);
+      localStorage.setItem("xp", xp);
+      localStorage.setItem("level", level);
+    }
+    
+    function loadData() {
+      localStorage.getItem("money");
+      localStorage.getItem("mpc");
+      localStorage.getItem("mps");
+      localStorage.getItem("xp");
+      localStorage.getItem("level");
+    }
     
   </script>
   
