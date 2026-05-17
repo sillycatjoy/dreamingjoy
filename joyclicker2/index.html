@@ -121,7 +121,7 @@
     
     let themes = ["dark"]
 
-    if (typeOf(Storage) !== "undefined") {
+    if (typeof(Storage) !== "undefined") {
       document.getElementById("savemenu").style.display = "block";
     } else {
       document.getElementById("savemenu").style.display = "none";
